@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#667eea" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Budget Tracker" />
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- App Header -->
+    <header class="app-header">
+      <h1>💰 Budget Tracker</h1>
+    </header>
+    
+    <div class="container">
+
+      <!-- Pay Period Info & New Budget Button -->
+      <div class="pay-period-header">
+        <div class="pay-period-info">
+          <span id="currentPayPeriod">Loading...</span>
+          <span id="daysRemaining" class="days-remaining"
+            >(Days remaining)</span
+          >
+        </div>
+        <button id="newBudgetBtn" class="new-budget-btn">New Budget</button>
+      </div>
+
+      <!-- Net Pay Input Section -->
+      <section class="net-pay-section">
+        <h2>Enter Your Net Pay</h2>
+        <div class="input-group">
+          <label for="netPayInput">Net Pay (₱):</label>
+          <input
+            type="number"
+            id="netPayInput"
+            placeholder="Enter your monthly net pay"
+            min="0"
+            step="0.01" />
+          <button id="setNetPayBtn">Set Net Pay</button>
+        </div>
+      </section>
+
+      <!-- Savings Input Section -->
+      <section class="savings-section">
+        <h2>Set Your Savings Target</h2>
+        <div class="input-group">
+          <label for="savingsInput">Savings Amount (₱):</label>
+          <input 
+            type="number" 
+            id="savingsInput" 
+            placeholder="How much do you want to save?"
+            min="0"
+            step="0.01"
+          >
+          <button id="setSavingsBtn">Set Savings</button>
+        </div>
+        <p class="savings-note">This amount is deducted from your net pay before calculating remaining balance.</p>
+      </section>
+
+      <!-- Dashboard Section -->
+      <section class="dashboard">
+        <h2>Dashboard</h2>
+        <div class="dashboard-cards">
+          <div class="card">
+            <h3>Net Pay</h3>
+            <p id="netPayDisplay">₱0.00</p>
+          </div>
+          <div class="card">
+            <h3>Total Expenses</h3>
+            <p id="totalExpensesDisplay">₱0.00</p>
+          </div>
+          <div class="card">
+            <h3>Remaining Balance</h3>
+            <p id="remainingBalanceDisplay">₱0.00</p>
+          </div>
+          <div class="card">
+            <h3>Savings</h3>
+            <p id="savingsDisplay">₱0.00</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Expense Section -->
+      <section class="add-expense-section">
+        <h2>Add an Expense</h2>
+        <div class="input-group">
+          <label for="expenseNameInput">Expense Name:</label>
+          <input
+            type="text"
+            id="expenseNameInput"
+            placeholder="e.g., Groceries, Gas, Rent" />
+        </div>
+        <div class="input-group">
+          <label for="expenseAmountInput">Amount (₱):</label>
+          <input
+            type="number"
+            id="expenseAmountInput"
+            placeholder="Enter amount"
+            min="0"
+            step="0.01" />
+        </div>
+        <div class="input-group">
+          <label for="expenseDateInput">Date:</label>
+          <input
+            type="date"
+            id="expenseDateInput" />
+        </div>
+        <button id="addExpenseBtn">Add Expense</button>
+      </section>
+
+      <!-- Expense List Section -->
+      <section class="expense-list-section">
+        <div class="expense-header">
+          <h2>Your Expenses</h2>
+          <button id="sortExpensesBtn" class="sort-btn">📅 Sort by Date (Newest)</button>
+        </div>
+        <div id="expensesList" class="expenses-list">
+          <p class="empty-message">No expenses yet. Add one above!</p>
+        </div>
+        <button id="loadMoreBtn" class="load-more-btn" style="display: none;">Load More Expenses</button>
+      </section>
+      </section>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div id="customAlertBackdrop" class="alert-backdrop">
+      <div id="customAlertModal" class="alert-modal">
+        <div class="alert-icon" id="alertIcon">ℹ️</div>
+        <h2 id="alertTitle">Alert</h2>
+        <p id="alertMessage">Message goes here</p>
+        <div class="alert-buttons">
+          <button id="alertOkBtn" class="alert-btn alert-btn-primary">OK</button>
+          <button id="alertCancelBtn" class="alert-btn alert-btn-secondary" style="display: none;">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Expense Modal -->
+    <div id="editBackdrop" class="edit-backdrop">
+      <div id="editModal" class="edit-modal">
+        <h2>Edit Expense</h2>
+        
+        <div class="input-group">
+          <label for="editExpenseName">Expense Name:</label>
+          <input
+            type="text"
+            id="editExpenseName"
+            placeholder="e.g., Groceries, Gas, Rent" />
+        </div>
+
+        <div class="input-group">
+          <label for="editExpenseAmount">Amount (₱):</label>
+          <input
+            type="number"
+            id="editExpenseAmount"
+            placeholder="Enter amount"
+            min="0"
+            step="0.01" />
+        </div>
+
+        <div class="input-group">
+          <label for="editExpenseDate">Date:</label>
+          <input
+            type="date"
+            id="editExpenseDate" />
+        </div>
+
+        <div class="edit-buttons">
+          <button id="editSaveBtn" class="edit-btn edit-btn-primary">Save Changes</button>
+          <button id="editCancelBtn" class="edit-btn edit-btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

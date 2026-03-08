@@ -1,0 +1,1025 @@
+/* ========================================
+   GENERAL STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fb;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    margin: 0;
+    /* Support for notch area on iPhone */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* App Header - Fixed at Top */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #5a8fa3 0%, #4a7c8a 100%);
+    color: white;
+    padding: max(20px, env(safe-area-inset-top)) 20px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: none;
+    /* Add margin-top to account for fixed header */
+    margin-top: calc(80px + env(safe-area-inset-top));
+    min-height: calc(100vh - 80px);
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    color: #4a7c8a;
+    margin-bottom: 15px;
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* ========================================
+   INPUT GROUPS (for consistent styling)
+   ======================================== */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    gap: 8px;
+}
+
+label {
+    color: #555;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    padding: 16px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    min-height: 48px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+button {
+    padding: 16px 24px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    min-height: 48px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    min-height: 44px;
+    min-width: 44px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+button:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* ========================================
+   PAY PERIOD HEADER
+   ======================================== */
+
+.pay-period-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pay-period-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+#currentPayPeriod {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.days-remaining {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.new-budget-btn {
+    background-color: #28a745;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    min-height: 44px;
+}
+
+.new-budget-btn:hover {
+    background-color: #218838;
+}
+
+/* ========================================
+   DASHBOARD SECTION
+   ======================================== */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.card h3 {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.card p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* ========================================
+   ADD EXPENSE SECTION
+   ======================================== */
+
+.add-expense-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+/* ========================================
+   SAVINGS SECTION
+   ======================================== */
+
+.savings-section {
+    background-color: #f0f9ff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+.savings-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* ========================================
+   EXPENSES LIST SECTION
+   ======================================== */
+
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.expense-header h2 {
+    margin-bottom: 0;
+}
+
+.sort-btn {
+    background-color: #17a2b8;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.sort-btn:hover {
+    background-color: #138496;
+}
+
+.load-more-btn {
+    width: 100%;
+    background-color: #667eea;
+    padding: 12px 24px;
+    font-size: 1rem;
+    margin-top: 20px;
+    border: 2px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+}
+
+.load-more-btn:active {
+    transform: translateY(0);
+}
+
+.load-more-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.expenses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.expense-group {
+    margin-bottom: 20px;
+}
+
+.expense-group-header {
+    background-color: #667eea;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expense-group-count {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.expense-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.expense-info {
+    flex: 1;
+}
+
+.expense-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.expense-date {
+    color: #999;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.expense-amount {
+    color: #764ba2;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.expense-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.edit-btn-small {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn-small:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background-color: #ff6b6b;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.delete-btn:hover {
+    background-color: #ff5252;
+    transform: translateY(-1px);
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+
+    section {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+    .pay-period-header {
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        flex-direction: column;
+    }
+
+    .pay-period-info {
+        width: 100%;
+    }
+
+    .new-budget-btn {
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 16px;
+        margin-top: calc(75px + env(safe-area-inset-top));
+        border-radius: 0;
+    }
+
+    .app-header {
+        padding: max(16px, env(safe-area-inset-top)) 16px 16px;
+    }
+
+    .app-header h1 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 0.95rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+        padding: 14px 12px;
+        font-size: 16px;
+        min-height: 48px;
+    }
+
+    button {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .input-group {
+        margin-bottom: 12px;
+        gap: 6px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 0.85rem;
+    }
+
+    .card p {
+        font-size: 1.3rem;
+    }
+
+    .pay-period-header {
+        padding: 12px 12px;
+        margin-bottom: 15px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .pay-period-info {
+        width: 100%;
+    }
+
+    #currentPayPeriod {
+        font-size: 0.95rem;
+    }
+
+    .days-remaining {
+        font-size: 0.8rem;
+    }
+
+    .new-budget-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .add-expense-section,
+    .savings-section,
+    .net-pay-section {
+        padding: 15px;
+    }
+
+    .savings-note {
+        font-size: 0.8rem;
+    }
+
+    section {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+
+    .expense-header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .expense-header h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sort-btn {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .expense-group-header {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+        padding: 10px 12px;
+    }
+
+    .expense-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .expense-info {
+        width: 100%;
+    }
+
+    .expense-name {
+        font-size: 0.95rem;
+    }
+
+    .expense-date {
+        font-size: 0.8rem;
+    }
+
+    .expense-amount {
+        font-size: 1rem;
+    }
+
+    .expense-actions {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .edit-btn-small,
+    .delete-btn {
+        flex: 1;
+        padding: 10px;
+        font-size: 0.8rem;
+        margin-left: 0;
+    }
+
+    .empty-message {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+
+    .alert-modal {
+        padding: 20px;
+        max-width: 90vw;
+    }
+
+    .alert-modal h2 {
+        font-size: 1.1rem;
+    }
+
+    .alert-modal p {
+        font-size: 0.9rem;
+    }
+
+    .alert-btn {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+
+    .edit-modal {
+        padding: 20px;
+        max-width: 90vw;
+    }
+
+    .edit-modal h2 {
+        font-size: 1.1rem;
+    }
+
+    .edit-modal input {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .edit-btn {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   EXTRA SMALL PHONES (under 360px)
+   ======================================== */
+
+@media (max-width: 360px) {
+    .container {
+        padding: 12px;
+        margin-top: calc(70px + env(safe-area-inset-top));
+    }
+
+    .app-header {
+        padding: max(12px, env(safe-area-inset-top)) 12px 12px;
+    }
+
+    .app-header h1 {
+        font-size: 1.3rem;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    button {
+        font-size: 0.85rem;
+        padding: 12px 14px;
+        min-height: 44px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+        padding: 12px 10px;
+        font-size: 16px;
+        min-height: 44px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card p {
+        font-size: 1.1rem;
+    }
+
+    .expense-actions {
+        gap: 4px;
+    }
+
+    .edit-btn-small,
+    .delete-btn {
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+
+    .sort-btn {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+        font-size: 16px;
+    }
+
+    .alert-modal,
+    .edit-modal {
+        padding: 15px;
+    }
+}
+
+/* ========================================
+   CUSTOM ALERT MODAL
+   ======================================== */
+
+.alert-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-backdrop.show {
+    display: flex;
+}
+
+.alert-modal {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.alert-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.alert-modal h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.alert-modal p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.alert-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.alert-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.alert-btn-primary {
+    background-color: #667eea;
+    color: white;
+}
+
+.alert-btn-primary:hover {
+    background-color: #5568d3;
+    transform: translateY(-2px);
+}
+
+.alert-btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.alert-btn-secondary:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.alert-btn:active {
+    transform: translateY(0);
+}
+
+/* Alert types styling */
+.alert-modal.success .alert-icon {
+    color: #28a745;
+}
+
+.alert-modal.success h2 {
+    color: #28a745;
+}
+
+.alert-modal.error .alert-icon {
+    color: #ff6b6b;
+}
+
+.alert-modal.error h2 {
+    color: #ff6b6b;
+}
+
+.alert-modal.error .alert-btn-primary {
+    background-color: #ff6b6b;
+}
+
+.alert-modal.error .alert-btn-primary:hover {
+    background-color: #ff5252;
+}
+
+.alert-modal.warning .alert-icon {
+    color: #ffc107;
+}
+
+.alert-modal.warning h2 {
+    color: #ffc107;
+}
+
+.alert-modal.warning .alert-btn-primary {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.alert-modal.warning .alert-btn-primary:hover {
+    background-color: #ffb300;
+}
+
+/* ========================================
+   EDIT EXPENSE MODAL
+   ======================================== */
+
+.edit-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-backdrop.show {
+    display: flex;
+}
+
+.edit-modal {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+.edit-modal h2 {
+    color: #667eea;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.edit-modal .input-group {
+    margin-bottom: 15px;
+}
+
+.edit-modal label {
+    color: #555;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.edit-modal input {
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.edit-modal input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.edit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.edit-btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.edit-btn-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.edit-btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.edit-btn-secondary:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.edit-btn:active {
+    transform: translateY(0);
+}
