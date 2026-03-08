@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <!-- Background with rounded corners -->
+  <rect width="192" height="192" fill="#5a8fa3" rx="40"/>
+  
+  <!-- Money bag emoji center -->
+  <text x="96" y="106" font-size="100" dominant-baseline="middle" text-anchor="middle" fill="white">💰</text>
+  
+  <!-- Subtle shadow effect -->
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="192" height="192" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="2" rx="40" filter="url(#shadow)"/>
+</svg>
