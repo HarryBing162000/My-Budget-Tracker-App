@@ -5,6 +5,7 @@ A mobile-friendly web app to help you track your income, expenses, and savings a
 ## 📱 Features
 
 ### Core Functionality
+
 - **Pay Period Tracking** - Automatically tracks 14-day pay periods (14th-28th and 29th-13th of each month)
 - **Net Pay Input** - Set your monthly net pay
 - **Savings Target** - Set how much you want to save each period
@@ -12,16 +13,19 @@ A mobile-friendly web app to help you track your income, expenses, and savings a
 - **Real-Time Dashboard** - See your net pay, total expenses, remaining balance, and savings at a glance
 
 ### Organization & Filtering
+
 - **Expense Grouping** - Expenses automatically grouped by date
 - **Sort by Date** - Toggle between newest-first and oldest-first sorting
 - **Load More Button** - Efficiently handle 100+ expenses with pagination (shows 10 at a time)
 
 ### Data Management
+
 - **Auto-Save** - All data automatically saved to browser storage
 - **Multiple Budgets** - Create new budgets each pay period (previous data is saved)
 - **Data Persistence** - Your data stays even after closing the app
 
 ### Settings & Customization
+
 - **Philippine Peso (₱)** - Currency formatted for PH market
 - **Custom Alerts** - Professional, styled alert notifications
 - **Mobile Optimized** - Works perfectly on phones, tablets, and desktops
@@ -46,20 +50,24 @@ A mobile-friendly web app to help you track your income, expenses, and savings a
 ### Managing Expenses
 
 **Edit an Expense:**
+
 - Click the "Edit" button next to any expense
 - Update the details
 - Click "Save" to confirm
 
 **Delete an Expense:**
+
 - Click the "Delete" button next to any expense
 - Expense is removed and totals are recalculated
 
 **Sort Expenses:**
+
 - Click "📅 Sort by Date" button to toggle between:
   - Newest first (most recent purchases)
   - Oldest first (earliest purchases)
 
 **View More Expenses:**
+
 - Click "Load More Expenses" button to see the next 10 expenses
 - Button appears automatically when you have more than 10 expenses
 
@@ -82,16 +90,19 @@ A mobile-friendly web app to help you track your income, expenses, and savings a
 ## 💡 Tips & Best Practices
 
 ### For Better Expense Tracking
+
 - **Name expenses clearly** - Use descriptive names like "Jollibee Lunch" instead of "Food"
 - **Add date immediately** - Record the date when you spend, not later
 - **Check regularly** - Review expenses weekly to catch any mistakes
 
 ### For Smart Budgeting
+
 - **Set realistic savings** - Don't set savings too high; you need spending flexibility
 - **Review remaining balance** - Know how much you have left for unplanned expenses
 - **Use sort feature** - Check largest expenses to find areas to save
 
 ### Data Safety
+
 - Your data is saved in your browser's local storage
 - **Backup important data** - Screenshot your dashboard before starting a new period
 - **Clear browser cache** - Only do this if you want to delete all saved data
@@ -100,24 +111,28 @@ A mobile-friendly web app to help you track your income, expenses, and savings a
 ## 💻 System Requirements
 
 ### Browsers
+
 - Chrome/Edge 60+
 - Firefox 55+
 - Safari 12+
 - Any modern mobile browser
 
 ### Devices
+
 - Desktop computers
 - Tablets
 - Smartphones (iPhone, Android)
 - Any device with a web browser
 
 ### Internet
+
 - No internet required! Everything works offline
 - Data stored locally on your device
 
 ## 🎯 What the App Is Good For
 
 ✅ **Perfect if you:**
+
 - Get paid every 14th and 29th
 - Want to track daily expenses
 - Need a quick, simple budget tool
@@ -126,6 +141,7 @@ A mobile-friendly web app to help you track your income, expenses, and savings a
 - Budget in Philippine Peso
 
 ✅ **Use cases:**
+
 - Monthly budget planning
 - Expense accountability
 - Savings tracking
@@ -135,9 +151,11 @@ A mobile-friendly web app to help you track your income, expenses, and savings a
 ## 🌐 Live Demo
 
 Visit the app online:
+
 - **GitHub:** https://github.com/HarryBing162000/My-Budget-Tracker-App
 
 Or run locally:
+
 1. Download the files
 2. Open `index.html` in your browser
 3. Start tracking!
@@ -211,6 +229,7 @@ A: Currently set to Philippine Peso (₱). Contact for other currency support.
 ## 📝 Version History
 
 **v1.0 (March 2026)**
+
 - Initial release
 - Core expense tracking
 - Pay period management
@@ -222,6 +241,7 @@ A: Currently set to Philippine Peso (₱). Contact for other currency support.
 ## 📧 Support & Feedback
 
 Found a bug? Have a feature request?
+
 - Create an issue on GitHub
 - Share feedback to improve the app
 
